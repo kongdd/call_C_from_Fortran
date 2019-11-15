@@ -41,7 +41,7 @@ PROGRAM MAIN
          INTERFACE 
             SUBROUTINE f(x) BIND(C)
                USE iso_c_binding  
-               REAL(c_float), value :: x 
+               REAL(c_float) :: x 
             END SUBROUTINE f
             ! FUNCTION f( x )  BIND(C) 
             !    USE iso_c_binding  
@@ -56,7 +56,7 @@ PROGRAM MAIN
 
    integer :: value_ = 99
    integer :: res
-   REAL(c_float) :: res2
+   ! REAL(c_float) :: res2
    REAL(c_float) :: scale = 1.0
    
    ! gloabl parameters works at here
@@ -64,9 +64,9 @@ PROGRAM MAIN
    CALL set_params(9999)
    CALL hello()
    res = add(2, 3)
+   write(*, *) res
    ! csub(float (*func)(float *), float *x)
    CALL csub( func2, scale)  
-   write(*, *) res2
    
 CONTAINS 
    ! REAL FUNCTION func( x )  
@@ -74,9 +74,9 @@ CONTAINS
    !    func = 10.0*x  
    ! END FUNCTION 
    SUBROUTINE func2( x )  
-      REAL(c_float), value :: x
+      REAL(c_float) :: x
+      write(*, *) "func2: x = ", x
       x = -999.0
       ! func = 10.0*x  
    END SUBROUTINE
-
 END PROGRAM 
