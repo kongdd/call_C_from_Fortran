@@ -1,0 +1,8 @@
+*.exe
+*.o
+*.mod
+
+temp/
+foo/
+
+main.exe
