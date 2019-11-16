@@ -8,10 +8,10 @@
             "name": "make build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/main",
+            "program": "${fileDirname}/main.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${fileDirname}", //"${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
@@ -23,7 +23,8 @@
                 }
             ],
             "preLaunchTask": "make build active file",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "miDebuggerPath": "gdb"
+            // "miDebuggerPath": "c:/Rtools/mingw_64/bin/gdb.exe"
         }
     ]
 }

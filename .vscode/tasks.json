@@ -3,14 +3,14 @@
         {
             "type": "shell",
             "label": "make build active file",
-            "command": "/usr/bin/make",
+            "command": "make",
             "args": [
                 // "-f",
                 // "${fileDirname}/Makefile_params"
             ],
             "options": {
                 // "cwd": "/usr/bin"
-                "cwd": "${workspaceFolder}",
+                "cwd": "${fileDirname}"//"${workspaceFolder}",
             }
         }
     ],
